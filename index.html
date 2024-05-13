@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about:blank generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Viewer</h1>
+    <textarea id="htmlInput" placeholder="Type your HTML here...">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;nl&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Mijn webpagina&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welkom op mijn pagina!&lt;/h1&gt;
+    &lt;p&gt;Dit is een voorbeeldpagina.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+    <button onclick="openInNewTab()">Preview page</button>
+
+    <script>
+        function openInNewTab() {
+            var html = document.getElementById("htmlInput").value;
+            var newWindow = window.open("about:blank");
+            newWindow.document.write(html);
+            newWindow.document.close();
+        }
+    </script>
+</body>
+</html>
